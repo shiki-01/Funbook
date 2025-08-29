@@ -134,9 +134,6 @@
 		<button onclick={checkForUpdate} title="アップデートを確認">
 			<Icon icon="material-symbols:system-update-alt-rounded" width="25" height="25" />
 		</button>
-		<button title="メニュー">
-			<Icon icon="material-symbols:menu-rounded" width="25" height="25" />
-		</button>
 	</div>
 </header>
 

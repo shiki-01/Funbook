@@ -237,10 +237,8 @@ export class DragService implements IDragService {
 			// スナップターゲットがある場合は接続を実行
 			let connected = false;
 			if (success && snapTarget && snapTarget.valid) {
-				console.log(snapTarget);
 				try {
 					const ok = this.executeConnection(draggedBlockId, snapTarget);
-					console.log(ok);
 					if (!ok) {
 						success = false;
 					} else {
@@ -413,13 +411,11 @@ export class DragService implements IDragService {
 					? getLoopHeightCallback(parentBlock.id)
 					: LAYOUT_CONSTANTS.BLOCK_VERTICAL_SPACING +
 						LAYOUT_CONSTANTS.BLOCK_VERTICAL_SPACING_OFFSET;
-			console.log(cumulative);
 			while (currentId) {
 				const child = getBlockCallback(currentId);
 				if (!child) break;
 				const parent = getBlockCallback(child.parentId || '');
 				if (!parent) break;
-				console.log(child, parent);
 				// zIndex は永続値としては深さのみを加算し、ドラッグ時の前面表示はコンポーネント側で動的加算する
 				const updatedChild: Block = {
 					...child,
@@ -898,7 +894,6 @@ export class DragService implements IDragService {
 			const freeSlot = targetBlock.content.some(
 				(c: any) => c.type === 'ContentValue' && c.data && !c.data.variables
 			);
-			console.log(freeSlot);
 			return freeSlot;
 		}
 
@@ -1047,7 +1042,6 @@ export class DragService implements IDragService {
 			} else {
 				// 通常の出力接続
 				const result = this.blockService.connectBlocks(snapTarget.blockId, draggedId, false);
-				console.log('result', result);
 				if (result) {
 					this.positionBlockAfterConnection(draggedId, snapTarget);
 				}
@@ -1075,7 +1069,6 @@ export class DragService implements IDragService {
 		const child = this.blockService.getBlock(draggedId);
 		const parent = this.blockService.getBlock(snapTarget.blockId);
 		if (!child || !parent) return;
-		console.log(child, parent);
 
 		let newPos: Position;
 		if (snapTarget.type === 'loop') {

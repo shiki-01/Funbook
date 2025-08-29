@@ -179,7 +179,6 @@
 				}
 			}
 			if (b.content.find((v) => 'variables' in v.data && v.data.variables === block.id)) {
-				console.log(b);
 				return true;
 			}
 		}

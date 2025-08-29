@@ -251,31 +251,6 @@
 		</div>
 
 		<div class="form-group">
-			<label for="color">色</label>
-			<input
-				id="color"
-				type="color"
-				value={formData.color}
-				oninput={(e) => updateFormField('color', (e.target as HTMLInputElement).value)}
-			/>
-		</div>
-
-		<div class="form-group">
-			<label for="connection">接続タイプ</label>
-			<select
-				id="connection"
-				value={formData.connection}
-				onchange={(e) =>
-					updateFormField('connection', (e.target as HTMLSelectElement).value as Connection)}
-			>
-				<option value={Connection.Input}>Input</option>
-				<option value={Connection.Output}>Output</option>
-				<option value={Connection.Both}>Both</option>
-				<option value={Connection.None}>None</option>
-			</select>
-		</div>
-
-		<div class="form-group">
 			<label for="output">出力テンプレート</label>
 			<input
 				id="output"
@@ -328,7 +303,6 @@
 			<button type="button" onclick={() => addContentItem('ContentSelector')}>
 				セレクターを追加
 			</button>
-			<button type="button" onclick={() => addContentItem('Separator')}> 区切り線を追加 </button>
 		</div>
 
 		{#each formData.content as item, index}

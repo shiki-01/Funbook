@@ -83,7 +83,6 @@
 			const rect = canvasContainer.getBoundingClientRect();
 
 			const bounds = canvasBounds();
-			console.log(bounds, viewport(), rect, deltaX, deltaY)
 			boardService.setViewportPosition({
 				x: Math.min(0, Math.max(-bounds.width + rect.width, viewport().x + deltaX)),
 				y: Math.min(0, Math.max(-bounds.height + rect.height, viewport().y + deltaY))
