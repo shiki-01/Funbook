@@ -1,0 +1,16 @@
+# Package Managers
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+bun.lockb
+src-tauri/Cargo.lock
+src-tauri/Cargo.pdf
+
+# Miscellaneous
+static/
+.kiro/
+.vscode/
+src-tauri/capabilities/
+src-tauri/gen/
+src-tauri/target

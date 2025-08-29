@@ -1,0 +1,445 @@
+{
+	"version": "1.0.0",
+	"name": "python_basic",
+	"lastModified": "2025-08-29T00:00:00.000Z",
+	"metadata": null,
+	"blockLists": [
+	{
+		"name": "Start",
+		"description": "はじまり",
+		"block": {
+			"id": "",
+			"name": "Start",
+			"title": "Start",
+			"type": "Flag",
+			"color": "#3357FF",
+			"output": "",
+			"connection": "Output",
+			"content": [],
+			"position": { "x": 200, "y": 100 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "var_a",
+		"description": "変数 a",
+		"block": {
+			"id": "",
+			"name": "var_a",
+			"title": "a",
+			"type": "Value",
+			"color": "#4DD75C",
+			"output": "a",
+			"connection": "Both",
+			"content": [],
+			"position": { "x": 50, "y": 250 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "var_b",
+		"description": "変数 b",
+		"block": {
+			"id": "",
+			"name": "var_b",
+			"title": "b",
+			"type": "Value",
+			"color": "#4DD75C",
+			"output": "b",
+			"connection": "Both",
+			"content": [],
+			"position": { "x": 50, "y": 320 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "var_c",
+		"description": "変数 c",
+		"block": {
+			"id": "",
+			"name": "var_c",
+			"title": "c",
+			"type": "Value",
+			"color": "#4DD75C",
+			"output": "c",
+			"connection": "Both",
+			"content": [],
+			"position": { "x": 50, "y": 390 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "set_value",
+		"description": "変数 に すうじ/もじ を いれる",
+		"block": {
+			"id": "",
+			"name": "set_value",
+			"title": "せっと",
+			"type": "Move",
+			"color": "#4DD75C",
+			"output": "${var_sel} = ${val_input}",
+			"connection": "Both",
+			"content": [
+				{
+					"id": "var_sel",
+					"type": "ContentSelector",
+						"data": {
+							"title": "へんすう",
+							"value": "",
+							"placeholder": "var",
+							"options": [
+								{ "id": "opt_a", "title": "a", "value": "a" },
+								{ "id": "opt_b", "title": "b", "value": "b" },
+								{ "id": "opt_c", "title": "c", "value": "c" }
+							]
+						}
+				},
+				{
+					"id": "val_input",
+					"type": "ContentValue",
+					"data": { "title": "あたい", "value": "", "placeholder": "123 や 'hi'" }
+				}
+			],
+			"position": { "x": 200, "y": 250 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "print",
+		"description": "だす",
+		"block": {
+			"id": "",
+			"name": "print",
+			"title": "ぷりんと",
+			"type": "Move",
+			"color": "#FFC107",
+			"output": "print(${val})",
+			"connection": "Both",
+			"content": [
+				{
+					"id": "val",
+					"type": "ContentValue",
+					"data": { "title": "なに", "value": "", "placeholder": "a や 123" }
+				}
+			],
+			"position": { "x": 200, "y": 320 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "input",
+		"description": "きく",
+		"block": {
+			"id": "",
+			"name": "input",
+			"title": "いんぷっと",
+			"type": "Move",
+			"color": "#FF9800",
+			"output": "${var_sel} = input()",
+			"connection": "Both",
+			"content": [
+				{
+					"id": "var_sel",
+					"type": "ContentSelector",
+					"data": {
+						"title": "へんすう",
+						"value": "",
+						"placeholder": "var",
+						"options": [
+							{ "id": "opt_a", "title": "a", "value": "a" },
+							{ "id": "opt_b", "title": "b", "value": "b" },
+							{ "id": "opt_c", "title": "c", "value": "c" }
+						]
+					}
+				}
+			],
+			"position": { "x": 200, "y": 390 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "calc",
+		"description": "けいさん",
+		"block": {
+			"id": "",
+			"name": "calc",
+			"title": "けいさん",
+			"type": "Move",
+			"color": "#9C27B0",
+			"output": "${left} ${op} ${right}",
+			"connection": "Both",
+			"content": [
+				{ "id": "left", "type": "ContentValue", "data": { "title": "ひだり", "value": "", "placeholder": "a や 1" } },
+				{ "id": "op", "type": "ContentSelector", "data": { "title": "おぷ", "value": "+", "options": [
+					{ "id": "plus", "title": "+", "value": "+" },
+					{ "id": "minus", "title": "-", "value": "-" },
+					{ "id": "mul", "title": "*", "value": "*" },
+					{ "id": "div", "title": "//", "value": "//" }
+				] } },
+				{ "id": "right", "type": "ContentValue", "data": { "title": "みぎ", "value": "", "placeholder": "b や 2" } }
+			],
+			"position": { "x": 200, "y": 460 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "if",
+		"description": "もし",
+		"block": {
+			"id": "",
+			"name": "if",
+			"title": "もし",
+			"type": "Composition",
+			"color": "#E91E63",
+			"output": "if ${left} ${cmp} ${right}:",
+			"connection": "Both",
+			"content": [
+				{ "id": "left", "type": "ContentValue", "data": { "title": "ひだり", "value": "", "placeholder": "a" } },
+				{ "id": "cmp", "type": "ContentSelector", "data": { "title": "どう?", "value": "==", "options": [
+					{ "id": "eq", "title": "==", "value": "==" },
+					{ "id": "ne", "title": "!=", "value": "!=" },
+					{ "id": "lt", "title": "<", "value": "<" },
+					{ "id": "gt", "title": ">", "value": ">" },
+					{ "id": "le", "title": "<=", "value": "<=" },
+					{ "id": "ge", "title": ">=", "value": ">=" }
+				] } },
+				{ "id": "right", "type": "ContentValue", "data": { "title": "みぎ", "value": "", "placeholder": "b" } }
+			],
+			"position": { "x": 450, "y": 250 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "elif",
+		"description": "もし つづき",
+		"block": {
+			"id": "",
+			"name": "elif",
+			"title": "それなら",
+			"type": "Composition",
+			"color": "#EC407A",
+			"output": "elif ${left} ${cmp} ${right}:",
+			"connection": "Both",
+			"content": [
+				{ "id": "left", "type": "ContentValue", "data": { "title": "ひだり", "value": "", "placeholder": "a" } },
+				{ "id": "cmp", "type": "ContentSelector", "data": { "title": "どう?", "value": "==", "options": [
+					{ "id": "eq", "title": "==", "value": "==" },
+					{ "id": "ne", "title": "!=", "value": "!=" },
+					{ "id": "lt", "title": "<", "value": "<" },
+					{ "id": "gt", "title": ">", "value": ">" }
+				] } },
+				{ "id": "right", "type": "ContentValue", "data": { "title": "みぎ", "value": "", "placeholder": "b" } }
+			],
+			"position": { "x": 450, "y": 320 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "else",
+		"description": "それいがい",
+		"block": {
+			"id": "",
+			"name": "else",
+			"title": "それいがい",
+			"type": "Composition",
+			"color": "#F06292",
+			"output": "else:",
+			"connection": "Both",
+			"content": [],
+			"position": { "x": 450, "y": 390 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "for_range",
+		"description": "くりかえし range",
+		"block": {
+			"id": "",
+			"name": "for_range",
+			"title": "くりかえし",
+			"type": "Loop",
+			"color": "#03A9F4",
+			"output": "for ${var_sel} in range(${start}, ${end}):",
+			"connection": "Both",
+			"content": [
+				{ "id": "var_sel", "type": "ContentSelector", "data": { "title": "へんすう", "value": "", "options": [
+					{ "id": "opt_i", "title": "i", "value": "i" },
+					{ "id": "opt_j", "title": "j", "value": "j" }
+				], "placeholder": "i" } },
+				{ "id": "start", "type": "ContentValue", "data": { "title": "はじまり", "value": "0", "placeholder": "0" } },
+				{ "id": "end", "type": "ContentValue", "data": { "title": "おわり", "value": "", "placeholder": "10" } }
+			],
+			"position": { "x": 700, "y": 250 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "while",
+		"description": "まわす (while)",
+		"block": {
+			"id": "",
+			"name": "while",
+			"title": "まわす",
+			"type": "Loop",
+			"color": "#0288D1",
+			"output": "while ${left} ${cmp} ${right}:",
+			"connection": "Both",
+			"content": [
+				{ "id": "left", "type": "ContentValue", "data": { "title": "ひだり", "value": "", "placeholder": "a" } },
+				{ "id": "cmp", "type": "ContentSelector", "data": { "title": "どう?", "value": "<", "options": [
+					{ "id": "lt", "title": "<", "value": "<" },
+					{ "id": "gt", "title": ">", "value": ">" },
+					{ "id": "ne", "title": "!=", "value": "!=" }
+				] } },
+				{ "id": "right", "type": "ContentValue", "data": { "title": "みぎ", "value": "", "placeholder": "10" } }
+			],
+			"position": { "x": 700, "y": 320 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "def_func",
+		"description": "かんすう を つくる",
+		"block": {
+			"id": "",
+			"name": "def_func",
+			"title": "かんすう",
+			"type": "Composition",
+			"color": "#8BC34A",
+			"output": "def ${fname}(${params}):",
+			"connection": "Both",
+			"content": [
+				{ "id": "fname", "type": "ContentValue", "data": { "title": "なまえ", "value": "", "placeholder": "main" } },
+				{ "id": "params", "type": "ContentValue", "data": { "title": "ひきすう", "value": "", "placeholder": "" } }
+			],
+			"position": { "x": 950, "y": 250 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "call_func",
+		"description": "かんすう を よぶ",
+		"block": {
+			"id": "",
+			"name": "call_func",
+			"title": "よぶ",
+			"type": "Works",
+			"color": "#7CB342",
+			"output": "${fname}(${args})",
+			"connection": "Both",
+			"content": [
+				{ "id": "fname", "type": "ContentValue", "data": { "title": "なまえ", "value": "", "placeholder": "main" } },
+				{ "id": "args", "type": "ContentValue", "data": { "title": "あーぐ", "value": "", "placeholder": "" } }
+			],
+			"position": { "x": 950, "y": 320 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "list_make",
+		"description": "りすと を つくる",
+		"block": {
+			"id": "",
+			"name": "list_make",
+			"title": "りすと",
+			"type": "Move",
+			"color": "#CDDC39",
+			"output": "${lname} = [${v1}, ${v2}]",
+			"connection": "Both",
+			"content": [
+				{ "id": "lname", "type": "ContentValue", "data": { "title": "なまえ", "value": "", "placeholder": "nums" } },
+				{ "id": "v1", "type": "ContentValue", "data": { "title": "1", "value": "", "placeholder": "1" } },
+				{ "id": "v2", "type": "ContentValue", "data": { "title": "2", "value": "", "placeholder": "2" } }
+			],
+			"position": { "x": 1200, "y": 250 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	},
+	{
+		"name": "comment",
+		"description": "めも",
+		"block": {
+			"id": "",
+			"name": "comment",
+			"title": "こめんと",
+			"type": "Works",
+			"color": "#90A4AE",
+			"output": "# ${text}",
+			"connection": "Both",
+			"content": [
+				{ "id": "text", "type": "ContentValue", "data": { "title": "めも", "value": "", "placeholder": "なにか" } }
+			],
+			"position": { "x": 1200, "y": 320 },
+			"zIndex": 0,
+			"visibility": true,
+			"draggable": true,
+			"editable": true,
+			"deletable": true
+		}
+	}
+  ]
+}
