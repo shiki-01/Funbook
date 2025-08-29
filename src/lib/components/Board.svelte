@@ -29,7 +29,7 @@
 	});
 
 	// 定数
-	const MARGIN = 500; // ブロック周りのマージン
+	const MARGIN = 2000; // ブロック周りのマージン
 	const MIN_ZOOM = 0.1;
 	const MAX_ZOOM = 3;
 	const ZOOM_SPEED = 0.1;

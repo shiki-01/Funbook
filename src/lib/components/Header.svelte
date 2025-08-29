@@ -131,9 +131,6 @@
 		<button onclick={handleSaveTemplate} title="テンプレートを保存 (.fbtpl)">
 			<Icon icon="material-symbols:save-as-rounded" width="25" height="25" />
 		</button>
-		<button onclick={checkForUpdate} title="アップデートを確認">
-			<Icon icon="material-symbols:system-update-alt-rounded" width="25" height="25" />
-		</button>
 	</div>
 </header>
 
