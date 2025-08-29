@@ -93,11 +93,11 @@
 			"title": "せっと",
 			"type": "Move",
 			"color": "#4DD75C",
-			"output": "${var_sel} = ${val_input}",
+			"output": "${selector_var} = ${val_input}",
 			"connection": "Both",
 			"content": [
 				{
-					"id": "var_sel",
+					"id": "selector_var",
 					"type": "ContentSelector",
 						"data": {
 							"title": "へんすう",

@@ -266,9 +266,13 @@ class BaseBlockStore {
 			const selector = b.content.find((c) => c.id === 'selector_var');
 			const valueInput = b.content.find((c) => c.id === 'val_input');
 			const varName =
-				selector && selector.type === 'ContentSelector' ? (selector.data as any).value : '';
+				selector && selector.type === 'ContentSelector' && 'value' in selector.data
+					? selector.data.value
+					: '';
 			const varValue =
-				valueInput && valueInput.type === 'ContentValue' ? (valueInput.data as any).value : '';
+				valueInput && valueInput.type === 'ContentValue' && 'value' in valueInput.data
+					? valueInput.data.value
+					: '';
 			if (varName) variableValues.set(varName, varValue);
 			// 対応する Value ブロックの assignmentFormat 探索
 			const valueTemplateBlock = Array.from(this.blocks.values()).find(
@@ -329,7 +333,7 @@ class BaseBlockStore {
 			if (currentBlock.type === BlockPathType.Loop && currentBlock.loopFirstChildId) {
 				outputs.push(replacedWithVariables);
 				this.traverseLoopChildren(currentBlock, outputs, 1);
-				const closeOutputRaw = currentBlock.closeOutput || '}';
+				const closeOutputRaw = currentBlock.closeOutput || '';
 				const closeOutput = replaceContentPlaceholders(currentBlock, closeOutputRaw);
 				const closeLines = closeOutput.split('\n');
 				closeLines.forEach((line) => outputs.push(line));
