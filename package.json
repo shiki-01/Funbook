@@ -21,7 +21,7 @@
 	"dependencies": {
 		"@fontsource-variable/noto-sans-jp": "^5.2.6",
 		"@iconify/svelte": "^5.0.0",
-		"@tauri-apps/api": "^2.8.0",
+		"@tauri-apps/api": "^2.6.0",
 		"@tauri-apps/plugin-dialog": "^2.3.0",
 		"@tauri-apps/plugin-fs": "^2.4.0",
 		"@tauri-apps/plugin-opener": "^2",
