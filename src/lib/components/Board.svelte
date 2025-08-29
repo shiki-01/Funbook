@@ -76,14 +76,17 @@
 	};
 
 	const handleCanvasMouseMove = (event: MouseEvent) => {
-		if (interactionState().isDragging) {
+		if (interactionState().isDragging && canvasContainer) {
 			const deltaX = event.clientX - interactionState().lastMousePos.x;
 			const deltaY = event.clientY - interactionState().lastMousePos.y;
 
+			const rect = canvasContainer.getBoundingClientRect();
+
 			const bounds = canvasBounds();
+			console.log(bounds, viewport(), rect, deltaX, deltaY)
 			boardService.setViewportPosition({
-				x: Math.min(0, Math.max(-bounds.width, viewport().x + deltaX)),
-				y: Math.min(0, Math.max(-bounds.height, viewport().y + deltaY))
+				x: Math.min(0, Math.max(-bounds.width + rect.width, viewport().x + deltaX)),
+				y: Math.min(0, Math.max(-bounds.height + rect.height, viewport().y + deltaY))
 			});
 
 			boardService.setCanvasDragging(true, {
@@ -380,21 +383,6 @@
 			title="ズームイン"
 		>
 			+
-		</button>
-		<button
-			onclick={() => {
-				if (canvasContainer) {
-					const containerRect = canvasContainer.getBoundingClientRect();
-					boardService.resetViewport({
-						width: containerRect.width,
-						height: containerRect.height
-					});
-				}
-				updateScrollbars();
-			}}
-			title="リセット"
-		>
-			⌂
 		</button>
 	</div>
 </div>
